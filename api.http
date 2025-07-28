@@ -1,0 +1,98 @@
+GET http://127.0.0.1:8000/products/ HTTP/1.1
+###
+POST http://127.0.0.1:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzNjk1OTU0LCJpYXQiOjE3NTM2OTIzNTQsImp0aSI6IjhkNWIzZWM4YWI4OTRmYzJiODAxZjU3MDIwNDY5NjBhIiwidXNlcl9pZCI6Mn0.Yr2zo2aDk1R1dEGLG2ZZvHYZ3_cRSy82nJ_qyn8ibPk
+
+{
+    "name": "New Product",
+    "description": "This is a new product.",
+    "price": 19.99,
+    "stock": 100
+}          
+###
+PUT  http://127.0.0.1:8000/products/23/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODI1NTczLCJpYXQiOjE3NTI4MjM4OTcsImp0aSI6IjgyNGNiNTQwN2ZmZDQ3NjRiM2ZmZGUwOTBhYzMxNWE1IiwidXNlcl9pZCI6MX0.ro7EEcdJL10sVJu7YcRENtr-6uAiyDwlGtc_-AJKquY
+
+{
+    "name": "New Product Updated",
+    "description": "This is not a new product.",
+    "price": 91.99,
+    "stock": 102
+}            
+###
+DELETE   http://127.0.0.1:8000/products/21/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODI1ODgzLCJpYXQiOjE3NTI4MjM4OTcsImp0aSI6IjQ4MDQ5ZDgyYmZmMTQxMjI5MGI1MWE4Y2IzYTMyNGE5IiwidXNlcl9pZCI6MX0._ND9cDucJc2K2ekJrzw0wzu-ffVYZCiKGt90XjgxIGI
+
+###
+POST http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "test"
+}
+###
+POST http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "nec",
+    "password": "nec"
+}
+###
+POST http://127.0.0.1:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzAwMjMxMCwiaWF0IjoxNzUyOTE1OTEwLCJqdGkiOiIzMTM4YmI1OTVhNWM0N2ExOGU0ZDBiMWRjZWQ0ZGQzMSIsInVzZXJfaWQiOjJ9.T8Lb56qZv3NpFqIJhkkyHZue66noWvVilIPcJ9X1gi8"
+}
+###
+GET http://127.0.0.1:8000/user-orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyODIzNDIzLCJpYXQiOjE3NTI4MjMxMjMsImp0aSI6IjIwMGI5NzkyMjUzZjQxZmVhZDVhYzc3MTcxYTk4MzliIiwidXNlcl9pZCI6MX0.epleUrWhMLVHoTbCFv3q2DHC23EHriIQWTkOnlwgsYk
+###
+GET http://127.0.0.1:8000/orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzMjc3NzgzLCJpYXQiOjE3NTMyNzU5ODMsImp0aSI6ImJmM2VlZDJmM2JmMDRiMGQ5NDRmMWQwNTdlNjVmMWJlIiwidXNlcl9pZCI6Mn0.2MYxZD0_vdrZI6p28pZceaVHzw5kia6GaTqw8TJFqf8
+###
+GET http://127.0.0.1:8000/orders/5e924686-ba19-4661-8014-6e09c7f51f9e/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyOTY5MDAxLCJpYXQiOjE3NTI5MTU5MTAsImp0aSI6IjdkMmFmOGU5NjZiNDRlZWZhZGMyNjcxNTdhN2NiMmFhIiwidXNlcl9pZCI6Mn0.hlQaPNyPv998q-lw2C-Xjn10gqAMgjx5iPg_MqUO5-w
+###
+POST http://127.0.0.1:8000/orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyOTE5ODIwLCJpYXQiOjE3NTI5MTU5MTAsImp0aSI6ImI1YTM1ZmQwOGFiMTQ3MTRhNmQzMWVkMWJlNzQ5NjA0IiwidXNlcl9pZCI6Mn0.6gcX-GZm1ubwauBVb--9Z8BTjH4AT57q99JOrdOwGYE
+Content-Type: application/json
+
+{
+    "status": "Pending",
+    "items": [
+        {
+            "product": 1,
+            "quantity": 2
+        },
+        {
+            "product": 2,
+            "quantity": 1
+        }
+    ]
+}
+###
+PUT http://127.0.0.1:8000/orders/5e924686-ba19-4661-8014-6e09c7f51f9e/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyOTY2ODIwLCJpYXQiOjE3NTI5MTU5MTAsImp0aSI6IjkyMWFiZDc4ZDYzYjQ4MTliODhjYTlkZTBiMjlkNTZmIiwidXNlcl9pZCI6Mn0.PrfqD2bjRZGXrXHaTg4kS9Hg-uztzVwOjFRD82lJbFg
+Content-Type: application/json
+
+{
+    "status": "Confirmed",
+    "items": [
+        {
+            "product": 1,
+            "quantity": 3
+        },
+        {
+            "product": 2,
+            "quantity": 4
+        }
+    ]
+}
+###
+DELETE http://127.0.0.1:8000/orders/5e924686-ba19-4661-8014-6e09c7f51f9e/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyOTY5MDAxLCJpYXQiOjE3NTI5MTU5MTAsImp0aSI6IjdkMmFmOGU5NjZiNDRlZWZhZGMyNjcxNTdhN2NiMmFhIiwidXNlcl9pZCI6Mn0.hlQaPNyPv998q-lw2C-Xjn10gqAMgjx5iPg_MqUO5-w
